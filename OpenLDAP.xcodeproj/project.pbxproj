@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		8D3D1BFE1C84414A009DF1B8 /* UniversalLib */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8D3D1BFF1C84414A009DF1B8 /* Build configuration list for PBXAggregateTarget "UniversalLib" */;
+			buildPhases = (
+				8D3D1C021C844169009DF1B8 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = UniversalLib;
+			productName = UniversalLib;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		8D3D1BF21C843FCD009DF1B8 /* liblber.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D1BED1C843F34009DF1B8 /* liblber.a */; };
 		8D3D1BF31C843FCD009DF1B8 /* libldap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D1BEB1C843F34009DF1B8 /* libldap.a */; };
@@ -13,7 +27,6 @@
 		8D3D1BF81C843FCE009DF1B8 /* libsasl2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D1BF51C843FCD009DF1B8 /* libsasl2.a */; };
 		8D3D1BF91C843FCE009DF1B8 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D1BF61C843FCE009DF1B8 /* libssl.a */; };
 		8D3D1BFB1C843FD8009DF1B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D1BFA1C843FD7009DF1B8 /* Foundation.framework */; };
-		8D3D1BFD1C843FE2009DF1B8 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D1BFC1C843FE2009DF1B8 /* libresolv.tbd */; };
 		8D447FBC1C8420BF00D9E590 /* OpenLDAP.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D447FBB1C8420BF00D9E590 /* OpenLDAP.h */; };
 		8D447FBE1C8420BF00D9E590 /* OpenLDAP.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D447FBD1C8420BF00D9E590 /* OpenLDAP.m */; };
 /* End PBXBuildFile section */
@@ -79,7 +92,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D3D1BFD1C843FE2009DF1B8 /* libresolv.tbd in Frameworks */,
 				8D3D1BFB1C843FD8009DF1B8 /* Foundation.framework in Frameworks */,
 				8D3D1BF71C843FCE009DF1B8 /* libcrypto.a in Frameworks */,
 				8D3D1BF81C843FCE009DF1B8 /* libsasl2.a in Frameworks */,
@@ -171,6 +183,9 @@
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = TenPearls;
 				TargetAttributes = {
+					8D3D1BFE1C84414A009DF1B8 = {
+						CreatedOnToolsVersion = 7.2;
+					};
 					8D447FB71C8420BF00D9E590 = {
 						CreatedOnToolsVersion = 7.2;
 					};
@@ -195,6 +210,7 @@
 			projectRoot = "";
 			targets = (
 				8D447FB71C8420BF00D9E590 /* OpenLDAP */,
+				8D3D1BFE1C84414A009DF1B8 /* UniversalLib */,
 			);
 		};
 /* End PBXProject section */
@@ -215,6 +231,22 @@
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8D3D1C021C844169009DF1B8 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# define output folder environment variable\nUNIVERSAL_OUTPUTFOLDER=${BUILD_DIR}/${CONFIGURATION}-universal\n\n# Step 1. Build Device and Simulator versions\nxcodebuild -target ImageFilters ONLY_ACTIVE_ARCH=NO -configuration ${CONFIGURATION} -sdk iphoneos  BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\nxcodebuild -target ImageFilters -configuration ${CONFIGURATION} -sdk iphonesimulator -arch i386 BUILD_DIR=\"${BUILD_DIR}\" BUILD_ROOT=\"${BUILD_ROOT}\"\n\n# make sure the output directory exists\nmkdir -p \"${UNIVERSAL_OUTPUTFOLDER}\"\n\n# Step 2. Create universal binary file using lipo\nlipo -create -output \"${UNIVERSAL_OUTPUTFOLDER}/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}.a\" \"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}.a\"\n\n# Last touch. copy the header files. Just for convenience\ncp -R \"${BUILD_DIR}/${CONFIGURATION}-iphoneos/include\" \"${UNIVERSAL_OUTPUTFOLDER}/\"";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D447FB41C8420BF00D9E590 /* Sources */ = {
@@ -241,6 +273,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		8D3D1C001C84414A009DF1B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8D3D1C011C84414A009DF1B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		8D447FBF1C8420BF00D9E590 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -350,6 +396,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		8D3D1BFF1C84414A009DF1B8 /* Build configuration list for PBXAggregateTarget "UniversalLib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8D3D1C001C84414A009DF1B8 /* Debug */,
+				8D3D1C011C84414A009DF1B8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		8D447FB31C8420BF00D9E590 /* Build configuration list for PBXProject "OpenLDAP" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

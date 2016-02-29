@@ -6,8 +6,8 @@
 //  Copyright © 2016 TenPearls. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#define LDAP_STATUS_AUTHFAIL        0
+#define LDAP_STATUS_AUTHSUCCESS     1
+#define LDAP_STATUS_NOTCONNECTED    2
 
-@interface OpenLDAP : NSObject
-
-@end
+int isADUserAuthentic(const char *defhost, int defport, const char *binddn, const char *passwd );
