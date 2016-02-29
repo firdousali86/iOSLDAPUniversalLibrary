@@ -7,9 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8D3D1BF21C843FCD009DF1B8 /* liblber.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D1BED1C843F34009DF1B8 /* liblber.a */; };
+		8D3D1BF31C843FCD009DF1B8 /* libldap.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D1BEB1C843F34009DF1B8 /* libldap.a */; };
+		8D3D1BF71C843FCE009DF1B8 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D1BF41C843FCD009DF1B8 /* libcrypto.a */; };
+		8D3D1BF81C843FCE009DF1B8 /* libsasl2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D1BF51C843FCD009DF1B8 /* libsasl2.a */; };
+		8D3D1BF91C843FCE009DF1B8 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D1BF61C843FCE009DF1B8 /* libssl.a */; };
+		8D3D1BFB1C843FD8009DF1B8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D1BFA1C843FD7009DF1B8 /* Foundation.framework */; };
+		8D3D1BFD1C843FE2009DF1B8 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D3D1BFC1C843FE2009DF1B8 /* libresolv.tbd */; };
 		8D447FBC1C8420BF00D9E590 /* OpenLDAP.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8D447FBB1C8420BF00D9E590 /* OpenLDAP.h */; };
 		8D447FBE1C8420BF00D9E590 /* OpenLDAP.m in Sources */ = {isa = PBXBuildFile; fileRef = 8D447FBD1C8420BF00D9E590 /* OpenLDAP.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8D3D1BEA1C843F34009DF1B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D3D1BE21C843F33009DF1B8 /* openldap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A03ADDBE11D14F1200F5A51F;
+			remoteInfo = ldap;
+		};
+		8D3D1BEC1C843F34009DF1B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D3D1BE21C843F33009DF1B8 /* openldap.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A03ADE2A11D1520A00F5A51F;
+			remoteInfo = lber;
+		};
+		8D3D1BEE1C843FC5009DF1B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D3D1BE21C843F33009DF1B8 /* openldap.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A03ADDBD11D14F1200F5A51F;
+			remoteInfo = ldap;
+		};
+		8D3D1BF01C843FC5009DF1B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8D3D1BE21C843F33009DF1B8 /* openldap.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = A03ADE2911D1520A00F5A51F;
+			remoteInfo = lber;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		8D447FB61C8420BF00D9E590 /* CopyFiles */ = {
@@ -25,6 +63,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8D3D1BE21C843F33009DF1B8 /* openldap.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openldap.xcodeproj; path = ExternalLibraries/iOSPorts/ports/database/openldap/openldap.xcodeproj; sourceTree = "<group>"; };
+		8D3D1BF41C843FCD009DF1B8 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "../../Library/Developer/Xcode/DerivedData/OpenLDAP-drruswvomxcvkpdyxghojblqmxmn/Build/Products/Debug-iphoneos/libcrypto.a"; sourceTree = "<group>"; };
+		8D3D1BF51C843FCD009DF1B8 /* libsasl2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsasl2.a; path = "../../Library/Developer/Xcode/DerivedData/OpenLDAP-drruswvomxcvkpdyxghojblqmxmn/Build/Products/Debug-iphoneos/libsasl2.a"; sourceTree = "<group>"; };
+		8D3D1BF61C843FCE009DF1B8 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "../../Library/Developer/Xcode/DerivedData/OpenLDAP-drruswvomxcvkpdyxghojblqmxmn/Build/Products/Debug-iphoneos/libssl.a"; sourceTree = "<group>"; };
+		8D3D1BFA1C843FD7009DF1B8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8D3D1BFC1C843FE2009DF1B8 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		8D447FB81C8420BF00D9E590 /* libOpenLDAP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOpenLDAP.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D447FBB1C8420BF00D9E590 /* OpenLDAP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenLDAP.h; sourceTree = "<group>"; };
 		8D447FBD1C8420BF00D9E590 /* OpenLDAP.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OpenLDAP.m; sourceTree = "<group>"; };
@@ -35,15 +79,44 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D3D1BFD1C843FE2009DF1B8 /* libresolv.tbd in Frameworks */,
+				8D3D1BFB1C843FD8009DF1B8 /* Foundation.framework in Frameworks */,
+				8D3D1BF71C843FCE009DF1B8 /* libcrypto.a in Frameworks */,
+				8D3D1BF81C843FCE009DF1B8 /* libsasl2.a in Frameworks */,
+				8D3D1BF91C843FCE009DF1B8 /* libssl.a in Frameworks */,
+				8D3D1BF21C843FCD009DF1B8 /* liblber.a in Frameworks */,
+				8D3D1BF31C843FCD009DF1B8 /* libldap.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8D3D1BE11C843F1B009DF1B8 /* ExternalLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				8D3D1BE21C843F33009DF1B8 /* openldap.xcodeproj */,
+			);
+			name = ExternalLibraries;
+			sourceTree = "<group>";
+		};
+		8D3D1BE31C843F33009DF1B8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8D3D1BEB1C843F34009DF1B8 /* libldap.a */,
+				8D3D1BED1C843F34009DF1B8 /* liblber.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8D447FAF1C8420BF00D9E590 = {
 			isa = PBXGroup;
 			children = (
+				8D3D1BFC1C843FE2009DF1B8 /* libresolv.tbd */,
+				8D3D1BFA1C843FD7009DF1B8 /* Foundation.framework */,
+				8D3D1BF41C843FCD009DF1B8 /* libcrypto.a */,
+				8D3D1BF51C843FCD009DF1B8 /* libsasl2.a */,
+				8D3D1BF61C843FCE009DF1B8 /* libssl.a */,
 				8D447FBA1C8420BF00D9E590 /* OpenLDAP */,
 				8D447FB91C8420BF00D9E590 /* Products */,
 			);
@@ -60,6 +133,7 @@
 		8D447FBA1C8420BF00D9E590 /* OpenLDAP */ = {
 			isa = PBXGroup;
 			children = (
+				8D3D1BE11C843F1B009DF1B8 /* ExternalLibraries */,
 				8D447FBB1C8420BF00D9E590 /* OpenLDAP.h */,
 				8D447FBD1C8420BF00D9E590 /* OpenLDAP.m */,
 			);
@@ -80,6 +154,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				8D3D1BEF1C843FC5009DF1B8 /* PBXTargetDependency */,
+				8D3D1BF11C843FC5009DF1B8 /* PBXTargetDependency */,
 			);
 			name = OpenLDAP;
 			productName = OpenLDAP;
@@ -110,12 +186,35 @@
 			mainGroup = 8D447FAF1C8420BF00D9E590;
 			productRefGroup = 8D447FB91C8420BF00D9E590 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8D3D1BE31C843F33009DF1B8 /* Products */;
+					ProjectRef = 8D3D1BE21C843F33009DF1B8 /* openldap.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D447FB71C8420BF00D9E590 /* OpenLDAP */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8D3D1BEB1C843F34009DF1B8 /* libldap.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libldap.a;
+			remoteRef = 8D3D1BEA1C843F34009DF1B8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8D3D1BED1C843F34009DF1B8 /* liblber.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = liblber.a;
+			remoteRef = 8D3D1BEC1C843F34009DF1B8 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D447FB41C8420BF00D9E590 /* Sources */ = {
@@ -127,6 +226,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8D3D1BEF1C843FC5009DF1B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ldap;
+			targetProxy = 8D3D1BEE1C843FC5009DF1B8 /* PBXContainerItemProxy */;
+		};
+		8D3D1BF11C843FC5009DF1B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = lber;
+			targetProxy = 8D3D1BF01C843FC5009DF1B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		8D447FBF1C8420BF00D9E590 /* Debug */ = {
@@ -212,18 +324,26 @@
 		8D447FC21C8420BF00D9E590 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/OpenLDAP";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/OpenLDAP/ExternalLibraries/iOSPorts/include";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/OpenLDAP/ExternalLibraries/iOSPorts/ports/database/openldap";
 			};
 			name = Debug;
 		};
 		8D447FC31C8420BF00D9E590 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/OpenLDAP";
+				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/OpenLDAP/ExternalLibraries/iOSPorts/include";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				USER_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/OpenLDAP/ExternalLibraries/iOSPorts/ports/database/openldap";
 			};
 			name = Release;
 		};
@@ -246,6 +366,7 @@
 				8D447FC31C8420BF00D9E590 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
